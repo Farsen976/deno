@@ -122,6 +122,7 @@ import internalTestBinding from "ext:deno_node/internal/test/binding.ts";
 import internalTimers from "ext:deno_node/internal/timers.mjs";
 import internalUtil from "ext:deno_node/internal/util.mjs";
 import internalUtilInspect from "ext:deno_node/internal/util/inspect.mjs";
+import { isBuiltin } from "node:module";
 import net from "node:net";
 import os from "node:os";
 import pathPosix from "node:path/posix";
@@ -217,6 +218,7 @@ function setupBuiltinModules() {
     "internal/timers": internalTimers,
     "internal/util/inspect": internalUtilInspect,
     "internal/util": internalUtil,
+    isBuiltin,
     net,
     os,
     "path/posix": pathPosix,
